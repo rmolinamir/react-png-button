@@ -7,11 +7,9 @@ interface IButtonProps {
   data: IButtonData
 }
 
-// ADD Reference & Label props
-
 const button = (props: IButtonProps) => {
   return (
-      <button ref={props.reference} {...props.data}>{props.children}</button>
+    <button ref={props.reference} {...props.data}>{props.children}</button>
   )
 }
 
