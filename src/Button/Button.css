@@ -1,0 +1,190 @@
+.Button {
+  position: relative;
+  outline: none;
+  cursor: pointer;
+  font: inherit;
+  width: fit-content;
+  user-select: none;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  line-height: 1.5;
+  font-weight: var(--font-bold-font-weight, 600);
+  padding-top: var(--spacing-button-vertical, 10px);
+  padding-bottom: var(--spacing-button-vertical, 10px);
+  padding-left: var(--spacing-button-horizontal, 17px);
+  padding-right: var(--spacing-button-horizontal, 17px);
+  box-shadow: var(--shadow-button-level0-box-shadow, none);
+  transition: background-color .1s ease-in-out, border-color .15s ease-in-out,box-shadow .15s ease-in-out, opacity 0.15s;
+}
+
+.BlockButton {
+  width: 100%;
+}
+
+.Button:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+.Primary {
+  color: #FFF;
+  background-color: rgb(0, 98, 179);
+  background-image: none;
+  border-color: rgb(0, 98, 179);
+}
+
+.Primary:not([disabled]):hover {
+  color: rgb(0, 98, 179);
+  background-color: #FFF;
+  border-color: rgb(0, 98, 179);
+}
+
+.Default {
+  color: #fff;
+  background-color: #484848;
+  border-color: #484848;
+  background-image: none;
+}
+
+.Default:not([disabled]):hover {
+  color: #484848;
+  border: 1px solid #484848;
+  background: #FFF;
+}
+
+.Dark {
+  color: #fff;
+  background-color: #383838;
+  border-color: #383838;
+  background-image: none;
+}
+
+.Dark:not([disabled]):hover {
+  color: #fff;
+  border: 1px solid #282828;
+  background: #282828;
+}
+
+.Light {
+  color: #484848;
+  border: 1px solid #EAEAEA;
+  background: #F3F3F3;
+  background-image: none;
+}
+
+.Light:not([disabled]):hover {
+  color: #383838;
+  border: 1px solid #E3E3E3;
+  background: #E3E3E3;
+}
+
+.Success {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+  background-image: none;
+}
+
+.Success:not([disabled]):hover {
+  color: #28a745;
+  background-color: transparent;
+  border-color: #28a745;
+}
+
+.Danger {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
+  background-image: none;
+}
+
+.Danger:not([disabled]):hover {
+  color: #dc3545;
+  background-color: transparent;
+  border-color: #dc3545;
+}
+
+.Logo {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto 10px;
+}
+
+.Facebook, .Google {
+  height: 48px;
+}
+
+.Facebook {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 12px;
+  color: rgb(255, 255, 255);
+  background: rgb(59, 89, 152);
+  border-color: transparent;
+}
+
+.Google {
+  display: flex;
+  justify-content: center;
+  align-items: center;    
+  margin-bottom: 12px;
+  color: rgb(255, 255, 255);
+  background: rgb(219, 50, 54);
+  border-color: transparent;
+}
+
+.Playstore,
+.Applestore {
+  display: table;
+  justify-content: center;
+  align-items: center;    
+  padding-left: 0;
+  color: rgb(255, 255, 255);
+  background: #040707;
+  border-color: transparent;
+  min-width: 200px;
+}
+
+.Playstore:hover,
+.Applestore:hover {
+  color: #333;
+  background: #FFF;
+  border-color: #333;
+  transition: all ease 200ms;
+}
+
+.Applestore svg path {
+  transition: fill ease 200ms;
+}
+
+.Applestore:hover svg path {
+  fill: #333 !important;
+}
+
+.Appstore {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: left;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.AppLogo {
+  display: table-cell;
+  vertical-align: bottom;
+  padding: 0 12px 0 6px;
+}
+
+.Download {
+  font-size: .75rem;
+  text-transform: uppercase;
+}
+
+.Store {
+  font-size: 1.5rem;
+  font-weight: normal;
+}

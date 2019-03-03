@@ -1,0 +1,56 @@
+.App {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-flow: column;
+  background-color: #FAFAFA;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.Button {
+  position: relative;
+  outline: none;
+  cursor: pointer;
+  font: inherit;
+  width: fit-content;
+  user-select: none;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 0px;
+  line-height: 1.5;
+  font-weight: var(--font-bold-font-weight, 600);
+  padding-top: var(--spacing-button-vertical, 10px);
+  padding-bottom: var(--spacing-button-vertical, 10px);
+  padding-left: var(--spacing-button-horizontal, 17px);
+  padding-right: var(--spacing-button-horizontal, 17px);
+  box-shadow: var(--shadow-button-level0-box-shadow, none);
+  transition: background-color .1s ease-in-out, border-color .15s ease-in-out,box-shadow .15s ease-in-out, opacity 0.15s;
+}
+
+.Primary {
+  color: magenta;
+  background-color: #FFF;
+  background-image: none;
+  border-color: magenta;
+}
+
+.Primary:not([disabled]):hover {
+  color: #FFF;
+  background-color: magenta;
+  border-color: magenta;
+}
+
+
+.Custom {
+  color: palevioletred;
+  background-color: #FFF;
+  background-image: none;
+  border-color: palevioletred;
+}
+
+.Custom:not([disabled]):hover {
+  color: #FFF;
+  background-color: palevioletred;
+  border-color: palevioletred;
+}

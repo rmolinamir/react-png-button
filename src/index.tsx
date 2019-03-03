@@ -1,23 +1,9 @@
-/**
- * @class ExampleComponent
- */
+import Button from './Button'
+import ButtonProvider from './Button/context'
 
-import * as React from 'react'
+export { Context } from './Button/context'
+export const Provider = ButtonProvider
 
-import styles from './styles.css'
+export { LogoButton } from './Button/LogoButton'
 
-export type Props = { text: string }
-
-export default class ExampleComponent extends React.Component<Props> {
-  render() {
-    const {
-      text
-    } = this.props
-
-    return (
-      <div className={styles.test}>
-        Example Component: {text}
-      </div>
-    )
-  }
-}
+export default Button
