@@ -1,7 +1,7 @@
 {
   "name": "react-png-button",
   "version": "1.0.0",
-  "description": "",
+  "description": "Flexible preset collection of multiple buttons to quickly build applications. Highly scalable due to usage of the new useContext hook API which allows the developer to modify all of the buttons CSS globally or specifically.",
   "author": "rmolinamir",
   "license": "MIT",
   "repository": "rmolinamir/react-png-button",
