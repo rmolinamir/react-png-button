@@ -7,18 +7,11 @@ import classes from './Button.css'
 // JSX
 import Button from './Button'
 
-export interface IAppProps {
+export interface IAppProps extends IButtonData {
   button: string,
-  children?: React.ReactNode,
-  // HTML Props
-  type?: string,
-  onClick?: ((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void) | undefined,
-  tabIndex?: number | undefined,
-  disabled?: boolean,
-  // CSS
-  blockButton?: boolean,
-  style?: React.CSSProperties
-  className?: string
+  reference?: React.RefObject<HTMLButtonElement>
+  children?: React.ReactNode
+  blockButton?: boolean
 }
 
 const button = (props: IAppProps) => {
@@ -64,9 +57,13 @@ const button = (props: IAppProps) => {
    */
   const buttonData: IButtonData = ButtonData.setData( { ...props }, buttonClasses)
 
+  /**
+   * CSS Properties.
+   */
   buttonData.style = context.style || props.style
+
   return (
-    <Button data={buttonData}>
+    <Button reference={props.reference} data={buttonData}>
       {props.children}
     </Button>
   )

@@ -1,28 +1,36 @@
 import { IAppProps } from '.'
 
 export interface IButtonData {
+  // React Reference
+  reference?: React.RefObject<HTMLButtonElement>
   // HTML Props
-  type?: string,
-  onClick?: ((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void) | undefined,
-  tabIndex?: number | undefined,
-  disabled?: boolean,
+  type?: string
+  name?: string
+  value?: string | number | string[] | undefined
+  onClick?: ((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void) | undefined
+  onMouseEnter?: ((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void)
+  onMouseLeave?: ((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void)
+  tabIndex?: number | undefined
+  disabled?: boolean
+  // HTML 5 Props
+  autoFocus?: boolean
+  form?: string
+  formAction?: string
+  formEncType?: string
+  formMethod?: string
+  formNoValidate?: boolean
+  formTarget?: string
   // CSS
-  blockButton?: boolean,
-  className: string,
-  setClassName?: React.Dispatch<React.SetStateAction<string>>,
   style?: React.CSSProperties
-  setStyle?: React.Dispatch<React.SetStateAction<React.CSSProperties | undefined>>,
+  className?: string
 }
 
 export namespace ButtonData {
   export const setData = (props: IAppProps, buttonClasses: (string | undefined)[]): IButtonData => {
     const buttonData: IButtonData = {
+      ...props,
       className: buttonClasses.join(' '),
-      style: props.style,
-      tabIndex: props.tabIndex,
-      type: props.type || 'button',
-      disabled: props.disabled,
-      onClick: props.onClick
+      type: props.type || 'button'
     }
     return buttonData
   }

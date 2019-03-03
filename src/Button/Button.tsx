@@ -1,14 +1,17 @@
 import * as React from 'react'
 import { IButtonData } from './buttonData'
 
-interface IAppProps {
-  children?: React.ReactNode,
+interface IButtonProps {
+  reference?: React.RefObject<HTMLButtonElement>
+  children?: React.ReactNode
   data: IButtonData
 }
 
-const button = (props: IAppProps) => {
+// ADD Reference & Label props
+
+const button = (props: IButtonProps) => {
   return (
-      <button {...props.data}>{props.children}</button>
+      <button ref={props.reference} {...props.data}>{props.children}</button>
   )
 }
 

@@ -4,10 +4,10 @@ const { useState } = React
 import classes from './Button.css'
 
 interface IClassNamesByButton {
-  Success: string,
-  Danger: string,
-  Primary: string,
-  Dark: string,
+  Success: string
+  Danger: string
+  Primary: string
+  Dark: string
   Light: string
 }
 
@@ -20,12 +20,15 @@ const classNamesByButton: IClassNamesByButton = {
 }
 
 export interface IContextProps {
-  className?: string,
+  // CSS Classes
+  className?: string
   classNames: IClassNamesByButton
-  setBaseClassname?: (className: string) => void,
-  setCustomClassname?: (classNameKey:string, className: string) => void,
-  style?: React.CSSProperties,
-  setStyle?: (CSSstyles: React.CSSProperties) => void,
+  setBaseClassname?: (className: string) => void
+  setCustomClassname?: (classNameKey:string, className: string) => void
+  // CSS Properties
+  style?: React.CSSProperties
+  setStyle?: (CSSstyles: React.CSSProperties) => void
+  // React Children
   children?: React.ReactNode
 }
 
@@ -48,10 +51,6 @@ const provider = (props: IContextProps) => {
     const classNameKey = capitalizeString(key)
     classNamesByButton[classNameKey] = className
   }
-
-  // TODO add context classes for all type of buttons
-
-  console.log('inside context.tsx')
 
 	return (
     <Context.Provider value={{

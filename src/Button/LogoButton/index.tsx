@@ -9,7 +9,6 @@ import Button from '../Button'
 
 export const LogoButton = (props: IAppProps) => {
   let logo: React.ReactNode = null
-
   let children: React.ReactNode = props.children
 
   const buttonClasses: (string | undefined)[] = [props.className]
@@ -64,7 +63,7 @@ export const LogoButton = (props: IAppProps) => {
   const content: React.ReactNode = <React.Fragment>{logo}{children}</ React.Fragment>
 
   return (
-    <Button data={buttonData}>
+    <Button reference={props.reference} data={buttonData}>
       {content}
     </Button>
   )
