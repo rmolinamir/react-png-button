@@ -23,7 +23,7 @@ export interface IContextProps {
   // CSS Classes
   className?: string
   classNames: IClassNamesByButton
-  setBaseClassname?: (className: string) => void
+  setGlobalClassName?: (className: string) => void
   setCustomClassname?: (classNameKey:string, className: string) => void
   // CSS Properties
   style?: React.CSSProperties
@@ -36,7 +36,7 @@ export interface IContextProps {
  * Button functionality and context.
  */
 const initialContext: IContextProps = {
-  className: classes.Button,
+  className: [classes.Button, classes.Disabled].join(' '),
   classNames: classNamesByButton,
   style: undefined,
 }
@@ -47,6 +47,10 @@ const provider = (props: IContextProps) => {
 	const [className, setClassName] = useState(props.className || initialContext.className)
   const [style, setStyle] = useState(props.style || initialContext.style)
 
+  const setGlobalClassName = (className: string) => {
+    setClassName([className, classes.Disabled].join(' '))
+  }
+
   const setCustomClassname = (key: string, className: string): void => {
     const classNameKey = capitalizeString(key)
     classNamesByButton[classNameKey] = className
@@ -55,7 +59,7 @@ const provider = (props: IContextProps) => {
 	return (
     <Context.Provider value={{
       className: className,
-      setBaseClassname: setClassName,
+      setGlobalClassName: setGlobalClassName,
       setCustomClassname: setCustomClassname,
       classNames: classNamesByButton,
       style: style,

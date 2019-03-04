@@ -46,16 +46,23 @@ const button = (props: IAppProps) => {
   }
 
   /**
+   * ES7 Object Rest Spread operator to omit properties from an object.
+   * In this case we are omitting the blockButton, children, and reference
+   * props from the data button properties.
+   */
+  const { blockButton, reference, children, ...data } = props
+
+  /**
    * If blockButton is true, then apply the BlockButton class.
    */
-  if (props.blockButton) {
+  if (blockButton) {
       buttonClasses.push(classes.BlockButton)
   }
 
   /**
    * Build the button data object that will be passed down to the Button component.
    */
-  const buttonData: IButtonData = ButtonData.setData( { ...props }, buttonClasses)
+  const buttonData: IButtonData = ButtonData.setData( { ...data }, buttonClasses)
 
   /**
    * CSS Properties.
@@ -63,8 +70,8 @@ const button = (props: IAppProps) => {
   buttonData.style = context.style || props.style
 
   return (
-    <Button reference={props.reference} data={buttonData}>
-      {props.children}
+    <Button reference={reference} data={buttonData}>
+      {children}
     </Button>
   )
 }

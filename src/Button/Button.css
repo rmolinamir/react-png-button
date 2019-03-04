@@ -22,7 +22,7 @@
   width: 100%;
 }
 
-.Button:disabled {
+.Disabled:disabled {
   opacity: 0.75;
   cursor: not-allowed;
 }
@@ -36,7 +36,7 @@
 
 .Primary:not([disabled]):hover {
   color: rgb(0, 98, 179);
-  background-color: #FFF;
+  background-color: transparent;
   border-color: rgb(0, 98, 179);
 }
 
