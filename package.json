@@ -1,6 +1,6 @@
 {
   "name": "react-png-button",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Flexible preset collection of multiple buttons to quickly build applications. Highly scalable due to usage of the new useContext hook API which allows the developer to modify all of the buttons CSS globally or specifically.",
   "author": "rmolinamir",
   "license": "MIT",
@@ -25,7 +25,6 @@
     "react-svg-library": "^1.0.4"
   },
   "peerDependencies": {
-    "prop-types": "^15.5.4",
     "react": "^16.8.0",
     "react-dom": "^16.8.0"
   },
