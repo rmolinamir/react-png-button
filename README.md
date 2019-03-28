@@ -46,44 +46,44 @@ Below is a code snippet that:
 ***index.js***
 
 ```jsx
-  import React from 'react'
-  import ReactDOM from 'react-dom'
-  import { Provider } from 'react-png-button'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-png-button'
 
-  import './index.css'
-  import App from './App'
+import './index.css'
+import App from './App'
 
-  ReactDOM.render(<Provider><App /></Provider>, document.getElementById('root'))
+ReactDOM.render(<Provider><App /></Provider>, document.getElementById('root'))
 ```
 
 ***App.js***
 
 ```jsx
-  import React, { useContext, useEffect } from 'react'
-  // CSS
-  import classes from './App.module.css'
-  // JSX
-  import Button, { Context } from 'react-png-button'
+import React, { useContext, useEffect } from 'react'
+// CSS
+import classes from './App.module.css'
+// JSX
+import Button, { Context } from 'react-png-button'
 
-  const app = () => {
-    const context = useContext(Context)
+const app = () => {
+  const context = useContext(Context)
 
-    const onClick = () => {
-      context.setGlobalClassName(classes.Button)
-    }
-
-    useEffect(() => {
-      context.setStyle({ width: '100%' })
-      context.setCustomClassname('custom', classes.Custom)
-    }, [])
-
-    return (
-      <Button button='primary' onClick={onClick}>Click me!</Button>
-      <Button button='custom'>A custom button.</Button>
-    )
+  const onClick = () => {
+    context.setGlobalClassName(classes.Button)
   }
 
-  export default app
+  useEffect(() => {
+    context.setStyle({ width: '100%' })
+    context.setCustomClassname('custom', classes.Custom)
+  }, [])
+
+  return (
+    <Button button='primary' onClick={onClick}>Click me!</Button>
+    <Button button='custom'>A custom button.</Button>
+  )
+}
+
+export default app
 ```
 
 ## Props
@@ -122,25 +122,26 @@ const component = () => {
 ## Global Button CSS Class
 
 ```css
-  .Button {
-    position: relative;
-    outline: none;
-    cursor: pointer;
-    font: inherit;
-    width: fit-content;
-    user-select: none;
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 4px;
-    line-height: 1.5;
-    font-weight: var(--font-bold-font-weight, 600);
-    padding-top: var(--spacing-button-vertical, 10px);
-    padding-bottom: var(--spacing-button-vertical, 10px);
-    padding-left: var(--spacing-button-horizontal, 17px);
-    padding-right: var(--spacing-button-horizontal, 17px);
-    box-shadow: var(--shadow-button-level0-box-shadow, none);
-    transition: background-color .1s ease-in-out, border-color .15s ease-in-out,box-shadow .15s ease-in-out, opacity 0.15s;
-  }
+.Button {
+  position: relative;
+  outline: none;
+  cursor: pointer;
+  font: inherit;
+  width: fit-content;
+  user-select: none;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  line-height: 1.5;
+  font-weight: 600;
+  padding: 10px 16px;
+  box-shadow: none;
+  transition: background-color .1s ease-in-out, border-color .15s ease-in-out,box-shadow .15s ease-in-out, opacity ease 0.15s, transform ease 0.15s;
+}
+
+.Button:active {
+  transform: scale(0.95);
+}
 ```
 
 ## License

@@ -7,14 +7,14 @@ import classes from './Button.css'
 // JSX
 import Button from './Button'
 
-export interface IAppProps extends IButtonData {
+export interface IButtonProps extends IButtonData {
   button: string,
   reference?: React.RefObject<HTMLButtonElement>
   children?: React.ReactNode
   blockButton?: boolean
 }
 
-const button = (props: IAppProps) => {
+const button = (props: IButtonProps) => {
   const context = useContext(Context)
   const { className, classNames } = context
 
@@ -76,4 +76,4 @@ const button = (props: IAppProps) => {
   )
 }
 
-export default button
+export default React.memo(button)

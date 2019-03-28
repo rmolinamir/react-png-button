@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { IAppProps } from '..'
+import { IButtonProps } from '..'
 import { IButtonData, ButtonData } from '../buttonData'
 // CSS
 import classes from '../Button.css'
@@ -7,7 +7,7 @@ import classes from '../Button.css'
 import { Icon } from 'react-svg-library'
 import Button from '../Button'
 
-export const LogoButton = (props: IAppProps) => {
+export const LogoButton = (props: IButtonProps) => {
   let logo: React.ReactNode = null
   let children: React.ReactNode = props.children
 

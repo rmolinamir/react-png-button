@@ -9,13 +9,14 @@
   border-style: solid;
   border-radius: 4px;
   line-height: 1.5;
-  font-weight: var(--font-bold-font-weight, 600);
-  padding-top: var(--spacing-button-vertical, 10px);
-  padding-bottom: var(--spacing-button-vertical, 10px);
-  padding-left: var(--spacing-button-horizontal, 17px);
-  padding-right: var(--spacing-button-horizontal, 17px);
-  box-shadow: var(--shadow-button-level0-box-shadow, none);
-  transition: background-color .1s ease-in-out, border-color .15s ease-in-out,box-shadow .15s ease-in-out, opacity 0.15s;
+  font-weight: 600;
+  padding: 10px 16px;
+  box-shadow: none;
+  transition: background-color .1s ease-in-out, border-color .15s ease-in-out,box-shadow .15s ease-in-out, opacity ease 0.15s, transform ease 0.15s;
+}
+
+.Button:active {
+  transform: scale(0.95);
 }
 
 .BlockButton {
@@ -23,8 +24,22 @@
 }
 
 .Disabled:disabled {
-  opacity: 0.75;
+  opacity: 0.5;
   cursor: not-allowed;
+}
+
+.Default {
+  color: #fff;
+  background-color: #484848;
+  border-color: #484848;
+  background-image: none;
+}
+
+.Default:not([disabled]):hover,
+.Default:not([disabled]):active {
+  color: #484848;
+  border: 1px solid #FFF;
+  background: #FFF;
 }
 
 .Primary {
@@ -35,22 +50,13 @@
 }
 
 .Primary:not([disabled]):hover {
-  color: rgb(0, 98, 179);
-  background-color: transparent;
-  border-color: rgb(0, 98, 179);
+  background-color: rgb(30, 111, 179);
+  border: 1px solid rgb(30, 111, 179);
 }
 
-.Default {
-  color: #fff;
-  background-color: #484848;
-  border-color: #484848;
-  background-image: none;
-}
-
-.Default:not([disabled]):hover {
-  color: #484848;
-  border: 1px solid #484848;
-  background: #FFF;
+.Primary:not([disabled]):active {
+  background-color: rgb(49, 139, 213);
+  border: 1px solid rgb(49, 139, 213);
 }
 
 .Dark {
@@ -60,10 +66,10 @@
   background-image: none;
 }
 
-.Dark:not([disabled]):hover {
-  color: #fff;
-  border: 1px solid #282828;
+.Dark:not([disabled]):hover,
+.Dark:not([disabled]):active {
   background: #282828;
+  border: 1px solid #282828;
 }
 
 .Light {
@@ -74,22 +80,30 @@
 }
 
 .Light:not([disabled]):hover {
-  color: #383838;
   border: 1px solid #E3E3E3;
   background: #E3E3E3;
 }
 
+.Light:not([disabled]):active {
+  border: 1px solid #F0F0F0;
+  background: #F0F0F0;
+}
+
 .Success {
-  color: #fff;
+  color: #FFF;
   background-color: #28a745;
   border-color: #28a745;
   background-image: none;
 }
 
 .Success:not([disabled]):hover {
-  color: #28a745;
-  background-color: transparent;
-  border-color: #28a745;
+  background-color: rgb(74, 165, 92);
+  border-color: rgb(74, 165, 92);
+}
+
+.Success:not([disabled]):active {
+  background-color: rgb(74, 213, 99);
+  border-color: rgb(74, 213, 99);
 }
 
 .Danger {
@@ -100,9 +114,13 @@
 }
 
 .Danger:not([disabled]):hover {
-  color: #dc3545;
-  background-color: transparent;
-  border-color: #dc3545;
+  background-color: #da4251;
+  border-color: #da4251;
+}
+
+.Danger:not([disabled]):active {
+  background-color: #f02a3e;
+  border-color: #f02a3e;
 }
 
 .Logo {

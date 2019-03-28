@@ -1,10 +1,10 @@
-import { IAppProps } from '.'
+import { IButtonProps } from '.'
 
 export interface IButtonData {
   // React Reference
   reference?: React.RefObject<HTMLButtonElement>
   // HTML Props
-  type?: string
+  type?: "button" | "submit" | "reset"
   name?: string
   value?: string | number | string[] | undefined
   onClick?: ((event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void) | undefined
@@ -26,7 +26,7 @@ export interface IButtonData {
 }
 
 export namespace ButtonData {
-  export const setData = (props: IAppProps, buttonClasses: (string | undefined)[]): IButtonData => {
+  export const setData = (props: IButtonProps, buttonClasses: (string | undefined)[]): IButtonData => {
     const buttonData: IButtonData = {
       ...props,
       className: buttonClasses.join(' '),

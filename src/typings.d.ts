@@ -15,3 +15,8 @@ declare module '*.svg' {
   export default svgUrl;
   export { svgComponent as ReactComponent }
 }
+
+declare module 'react-svg-library' {
+  export const Icon: React.ReactType
+  export const Underline: React.ReactType
+}
