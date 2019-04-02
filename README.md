@@ -10,7 +10,7 @@
 npm install --save react-png-button
 ```
 
-## [Showcase](https://www.robertmolina.dev/codelab/react-svg-library)
+## [Showcase](https://www.robertmolina.dev/codelab/react-png-button)
 
 ![Showcase](https://i.imgur.com/mT5pahw.png "Showcase")
 
